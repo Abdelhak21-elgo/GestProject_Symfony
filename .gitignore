@@ -20,6 +20,6 @@
 ###< symfony/phpunit-bridge ###
 
 ##> ignore envirment
-.env
-.env.test
+/.env
+/.env.test
 ##< ignore envirment
