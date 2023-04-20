@@ -3,3 +3,20 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+user_edit:
+    path: '/users/{id}/edit'
+    controller: App\Controller\HomeController::edit
+    methods: ['GET', 'POST']
+
+user_delete:
+    path: /user/{id}/delete
+    controller: App\Controller\HomeController::delete
+
+app_add_user:
+    path: /add/user
+    controller: App\Controller\AddUserController::index

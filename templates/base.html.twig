@@ -7,7 +7,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {# {{ encore_entry_link_tags('app') }} #}
             <link rel="stylesheet" href={{ asset("/build/app.css") }}>
         {% endblock %}
 
@@ -17,6 +17,7 @@
         {% endblock %}
     </head>
     <body>
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
     </body>
 </html>

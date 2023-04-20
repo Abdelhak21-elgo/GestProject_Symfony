@@ -12,3 +12,7 @@ import './styles/app.css';
 import './bootstrap';
 
 console.log("hello from webpack encore");
+
+function goToHome() {
+    window.location.href = '/'; // Replace 'home' with the name of your homepage route
+}

@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+	{{ include('header/index.html.twig') }}
+	<div class="container" id="main-container">
+		<div class="row mt-5">
+		{% for user in users %}
+			<div class="col-md-6 col-xl-3">
+				
+					<div class="card m-b-30">
+						<div class="card-body row">
+							<div class="col-6">
+								<a href=""><img src="{{user.userImagePath}}" alt="" class="img-fluid rounded-circle w-60"></a>
+							</div>
+							<div class="col-6 card-title align-self-center mb-0">
+								<h5>{{user.firstname}}</h5>
+								<p class="m-0">{{user.lastname}}</p>
+							</div>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<i class="fa fa-envelope float-right"></i>Email :
+								<a href="#">{{user.userEmail}}</a>
+							</li>
+							<li class="list-group-item">
+								<i class="fa fa-phone float-right"></i>Phone :
+								{{user.phone}}</li>
+						</ul>
+						<div class="card-body">
+							<div class="float-right btn-group btn-group-sm">
+								<a class="btn btn-primary tooltips" data-placement="top" href="{{ path('user_edit', { 'id': user.id }) }}" data-original-title="Edit">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a class="btn btn-primary tooltips" data-placement="top" href="{{ path('user_delete', { 'id': user.id }) }}" data-original-title="Edit">
+									<i class="fa fa-times"></i>
+								</a>
+							</div>
+							<ul class="social-links list-inline mb-0">
+								<li class="list-inline-item">
+									<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook">
+										<i class="fa fa-facebook-f"></i>
+									</a>
+								</li>
+								<li class="list-inline-item">
+									<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li class="list-inline-item">
+									<a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype">
+										<i class="fa fa-skype"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
+
+{# 
+	{% extends 'base.html.twig' %}
+
+	{% block body %}
+		<div class="container">
+			<h1>User List</h1>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in users %}
+						<tr>
+							<td>{{ user.firstName }}</td>
+							<td>{{ user.lastName }}</td>
+							<td>{{ user.userEmail }}</td>
+							<td>
+								<a class="btn btn-primary tooltips" data-placement="top" href="{{ path('user_edit', { 'id': user.id }) }}" data-original-title="Edit">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a href="{{ path('user_delete', {'id': user.id}) }}" class="btn btn-danger">Delete</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endblock %} #}

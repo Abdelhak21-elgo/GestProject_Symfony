@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class EmployeeController extends AbstractController
+class HeaderController extends AbstractController
 {
-    #[Route('/employee', name: 'app_employee')]
+    
     public function index(): Response
     {
-        return $this->render('employee/index.html.twig', [
-            'controller_name' => 'Employee',
+        return $this->render('header/index.html.twig', [
+            'controller_name' => 'HeaderController',
         ]);
     }
 }
