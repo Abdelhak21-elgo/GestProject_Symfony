@@ -13,6 +13,7 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            <script src= {{ asset("/build/runtime.js") }}></script>
             <script src={{ asset("/build/app.js") }} defer></script>
         {% endblock %}
     </head>

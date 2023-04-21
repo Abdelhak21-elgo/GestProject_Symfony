@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-8 offset-md-2">
-                <h1>Edit User</h1>
+                <h1>Add User</h1>
             <div class="form">
                 {{ form_start(form) }}
                     <div class="form-group">
@@ -42,17 +42,12 @@
                     </div>
             </div>
             <div>
-                <input type="button" class="btn btn-default" data-dismiss="modal" onclick="goToHome()" value="Cancel">
+                {# <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" {% do redirect('home') %}> #}
+                <a href="{{ asset("/")}}" class="btn btn-default">Cancel</a>
                 <input type="submit" class="btn btn-info" value="Save">
             </div>
             {{ form_end(form) }}
         </div>
     </div>
 </div>
-
-<script>
-function goToHome() {
-    window.location.href = '/'; // Replace 'home' with the name of your homepage route
-}
-</script>
 {% endblock %}

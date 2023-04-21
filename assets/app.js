@@ -16,3 +16,13 @@ console.log("hello from webpack encore");
 function goToHome() {
     window.location.href = '/'; // Replace 'home' with the name of your homepage route
 }
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     "use strict";
+   
+//     var button = document.querySelector("button.cancel");
+//     button.addEventListener("click", function (event) {
+//         goToHome();
+//     });
+//   });

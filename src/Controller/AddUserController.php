@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Role;
 use App\Entity\User;
 use App\Form\AdduserFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -24,10 +25,14 @@ class AddUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $userRoles = $form->get('Users_Roles')->getData('role_name');
-            foreach ($userRoles as $userRole) {
-                $user->addUsersRole($userRole);
+            $userRoles = $form->get('Users_Roles')->getData();
+            foreach ($userRoles as $uRole) {
+                $role = $this->em->getRepository(Role::class)->find($uRole->getId());
+                $user->addUsersRole($role);
+                $role->addUserRole($user); 
+                
             }
+            
             $this->em->persist($user);
             $this->em->flush();
         

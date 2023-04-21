@@ -23,7 +23,7 @@ class AdduserFormType extends AbstractType
             ->add('user_ImagePath')
             ->add('phone')
             ->add('Users_Roles', EntityType::class, [
-                'label' => 'role_user',
+                'label' => 'Roles',
                 'class' => Role::class,
                 'choice_label' => 'role_name',
                 'expanded' => true, // Render as radio buttons
